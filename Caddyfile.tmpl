@@ -1,5 +1,5 @@
 {{.Env.FQDN}}
-{{if (getenv "TLS_CONFIG")}}tls {{.Env.TLS_CONFIG}}{{else}}{{end}}
+tls {{if (getenv "TLS_CONFIG")}}{{.Env.TLS_CONFIG}}{{else}}off{{end}}
 
 gzip
 
