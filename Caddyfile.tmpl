@@ -5,4 +5,11 @@ gzip
 
 prometheus 0.0.0.0:9180
 
+{{if (getenv "PROXY_DEST")}}
 proxy / {{.Env.PROXY_DEST}}
+{{end}}
+
+
+{{if (getenv "REDIR_DEST")}}
+redir {{.Env.REDIR_DEST}}
+{{end}}
